@@ -1,4 +1,4 @@
-# In this job we will add multiple steps in the job
+# In this job we will add multple job in the job
 name: "Second Job"
 on:
   workflow_dispatch:
@@ -8,6 +8,7 @@ jobs:
     steps:
       - run: echo "Hello world"
   say-hello-from-python:
+    needs: say-hello-from-bash
     runs-on: ubuntu-24.04
     steps:
       - run : print("Hello from python")
